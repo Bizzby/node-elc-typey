@@ -4,7 +4,7 @@
   "description": "some kind of slightly awful runtime type checking helpers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap test/*.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Bizzby/node-elc-typey/issues"
   },
-  "homepage": "https://github.com/Bizzby/node-elc-typey#readme"
+  "homepage": "https://github.com/Bizzby/node-elc-typey#readme",
+  "devDependencies": {
+    "tap": "^1.4.1"
+  }
 }
