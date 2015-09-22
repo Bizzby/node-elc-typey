@@ -31,15 +31,17 @@ wish to type check. In turn that will return a function that behaves the same
 way as your original function (except it throws errors if the wrong arg types are supplied).
 
 This library will not modify the arguments in anyway before passing them through to your original
-function. (combinators are great things)
+function. (combinators are great things) (except ycombinator - that is a bad thing™)
 
 # Examples
 
 ```coffeescript
 
+type = require('elc-typey')
+
 class Accounts
 
-    constructor: _type(Date, Date) (start, end)->
+    constructor: type(Date, Date) (start, end)->
 
         @_start = somethingCool(start)
         @_date = somethingElseCool(end)
