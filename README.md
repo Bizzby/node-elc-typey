@@ -13,12 +13,12 @@ look at ES7 decorators or sweet-js macros instead.
 This is mostly intended for working with coffee-script
 but might work with vanilla ES5/ES6 too.
 
-```
+```javascript
 var type = require('elc-typey');
 
-var typeCheck = type(constructor || "string" || undefined, [...]);
+var typeCheck = type(constructor || "string" || undefined [, ...]);
 
-var typeCheckedSomeFunc typeCheck(someFunc);
+var typeCheckedSomeFunc = typeCheck(someFunc);
 ```
 
 `type` takes a variable number of arguments, each of which should either be 
