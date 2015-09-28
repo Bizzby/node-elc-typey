@@ -21,14 +21,35 @@ var typeCheck = type(constructor || "string" || undefined [, ...]);
 var typeCheckedSomeFunc = typeCheck(someFunc);
 ```
 
-`type` takes a variable number of arguments, each of which should either be 
- - constructor function : if supplied then an `instanceof` test will be used
- - string : if supplied then a `typeof` test will be used
- - undefined : if supplied then no type checking will be used
+`type` takes a variable number of arguments, each of which should either be a
+ - constructor function : if supplied then an `instanceof` test will be used.
+ - string : if supplied then a `typeof` test will be used and compared against the supplied string.
+ - `undefined` || `"*"` : if supplied then no type checking will be used.
 
 The function returned by `type()` should then be called with the function you
 wish to type check. In turn that will return a function that behaves the same
 way as your original function (except it throws errors if the wrong arg types are supplied).
+
+`elc-typey` exports some aliases to shorten function signatures
+
+```javascript
+var type = = require('elc-typey');
+
+console.log(type);
+{ [Function: typeCheck]
+  fn: 'function',
+  str: 'string',
+  bool: 'boolean',
+  num: 'number',
+  obj: 'object',
+  any: '*'
+}
+
+var typeCheck = type(type.fn, type.bool, '*')
+
+
+```
+
 
 This library will not modify the arguments in anyway before passing them through to your original
 function. (combinators are great things) (except ycombinator - that is a bad thing™)

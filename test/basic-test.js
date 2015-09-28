@@ -47,7 +47,7 @@ tap.doesNotThrow(correctTypeUsed);
 
 
 function typeOfCheck(){
-    var myTypedFunc = type('string')(console.log)
+    var myTypedFunc = type(type.str)(console.log)
     myTypedFunc();
 }
 
