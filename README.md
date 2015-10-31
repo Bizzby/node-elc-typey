@@ -10,15 +10,15 @@ look at ES7 decorators or sweet-js macros instead.
 
 # Usage
 
-This is mostly intended for working with coffee-script
-but might work with vanilla ES5/ES6 too.
-
 ```javascript
 var type = require('elc-typey');
 
 var typeCheck = type(constructor || "string" || undefined [, ...]);
 
-var typeCheckedSomeFunc = typeCheck(someFunc);
+var stuff = function(user, name, age){
+  typeCheck(arguments);
+}
+
 ```
 
 `type` takes a variable number of arguments, each of which should either be a
@@ -26,9 +26,8 @@ var typeCheckedSomeFunc = typeCheck(someFunc);
  - string : if supplied then a `typeof` test will be used and compared against the supplied string.
  - `undefined` || `"*"` : if supplied then no type checking will be used.
 
-The function returned by `type()` should then be called with the function you
-wish to type check. In turn that will return a function that behaves the same
-way as your original function (except it throws errors if the wrong arg types are supplied).
+The function returned by `type()` should then be called with the arguments you
+wish to type check. 
 
 `elc-typey` exports some aliases to shorten function signatures
 

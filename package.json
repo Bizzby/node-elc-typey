@@ -1,6 +1,6 @@
 {
   "name": "elc-typey",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "some kind of slightly awful runtime type checking helpers",
   "main": "index.js",
   "scripts": {
